@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from invoke_types import InvocationRequest, Actor, LLMMessage
 from settings import MODEL, MODEL_KEY, MAX_TOKENS
 import json
-import anthropic
+import sambanova
 
 # NOTE: increment PROMPT_VERSION if you make ANY changes to these prompts
 
@@ -30,18 +30,18 @@ def invoke_ai(conn,
         start_time = datetime.now(tz=timezone.utc)
         serialized_messages = [msg.model_dump() for msg in messages]
 
-        anthropic_response = anthropic.Anthropic().messages.create(
+        sambanova_response = sambanova.SambaNova().messages.create(
             model=MODEL,
             system=system_prompt,
             messages=serialized_messages,
             max_tokens=MAX_TOKENS,
         )
 
-        input_tokens = anthropic_response.usage.input_tokens
-        output_tokens = anthropic_response.usage.output_tokens
+        input_tokens = sambanova_response.usage.input_tokens
+        output_tokens = sambanova_response.usage.output_tokens
         total_tokens = input_tokens + output_tokens
 
-        text_response = anthropic_response.content[0].text
+        text_response = sambanova_response.content[0].text
 
         finish_time = datetime.now(tz=timezone.utc)
 
@@ -133,4 +133,3 @@ def refine(conn, turn_id: int, request: InvocationRequest, critique_response: st
             )
         ]
     )
-

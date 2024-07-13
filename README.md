@@ -1,4 +1,4 @@
-# AI Alibis: Multi-Agent LLM Murder Mystery
+# Agent SAK: Multi-Agent LLM Murder Mystery
 
 **[Play online](https://ai-murder-mystery.onrender.com)**
 <div align="center">
@@ -6,6 +6,8 @@
 <img alt="Ai Alibis Logo" src="web/src/assets/screenshot.png" max-width="80%">
 </div>
 </a>
+
+Based on <a href="https://github.com/ironman5366/ai-murder-mystery-hackathon" target="_blank">https://github.com/ironman5366/ai-murder-mystery-hackathon</a>
 
 ## Setup
 1. Git clone the repo
@@ -43,4 +45,4 @@ Twitter thread on the game: https://x.com/humanscotti/status/1810777932568399933
 
 ## Contact
 
-AI Alibis was created by [Paul Scotti](https://paulscotti.github.io/) and [Will Beddow](https://www.willbeddow.com/).
+Agent SAK was created by [Paul Scotti](https://paulscotti.github.io/) and [Will Beddow](https://www.willbeddow.com/).

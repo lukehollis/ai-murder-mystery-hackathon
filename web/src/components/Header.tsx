@@ -11,10 +11,10 @@ export default function Header() {
       <div className={styles['logo-container']}>
         <img src={logo} width="90px" className={styles.logo} />
         <div>
-          <Text size="lg">AI Alibis</Text>
+          <Text size="lg">Agent SAK</Text>
           <Text size="12px">
             Multi-Agent LLM Murder Mystery |{' '}
-            <a href="https://github.com/ironman5366/ai-murder-mystery-hackathon">GitHub</a>
+            <a href="https://github.com/lukehollis/ai-murder-mystery-hackathon">GitHub</a>
           </Text>
         </div>
       </div>

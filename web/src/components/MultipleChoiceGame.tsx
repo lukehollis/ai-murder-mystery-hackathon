@@ -9,29 +9,29 @@ interface MultipleChoiceGameProps {
 const questions = [
   {
     question: "Who compromised security and uploaded malware to the enterprise servers?? (Question 1/3)",
-    choices: ["CTO", 
-              "CMO", 
-              "CFO", 
-              "Corporate Lawyer",
-              "Innocent Kim",
+    choices: ["Sec Chief Sarah", 
+              "CEO Mark", 
+              "IT Manager Tom", 
+              "New Hire Nina",
+              "HR Rachel",
             ]
   },
   {
-    question: "What was the motive for killing compromising security and uploading malware to the enterprise servers. ? (Question 2/3)",
-    choices: ["Hired to kill from the Bucket Mafia", 
-              "Hired to kill from CMO",
-              "Getting back stolen treasure", 
-              "Vengeance for the murder of Missing Marcel",
-              "Vengeance for Pwetty Princess",
+    question: "What was the motive for compromising security and uploading malware to the enterprise servers? (Question 2/3)",
+    choices: ["Corporate Espionage", 
+              "Financial Gain",
+              "Political Agenda", 
+              "Personal Vendetta",
+              "Extortion",
             ]
   },
   {
-    question: "Who killed Missing Marcel? (Final Question)",
-    choices: ["CTO", 
-            "CMO", 
-            "CFO", 
-            "Corporate Lawyer",
-            "Innocent Kim",
+    question: "What was their method for compromising affected systems? (Final Question)",
+    choices: ["Phishing Attack", 
+            "Social Engineering", 
+            "Malware Injection", 
+            "Ransomware",
+            "Unpatched Vulnerabilities",
             ],
   }
 ];

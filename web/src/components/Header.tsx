@@ -1,6 +1,6 @@
 import React from 'react';
 import { Group, Image, Text, Anchor } from '@mantine/core';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_agent_sak.jpeg';
 import synthlabsLogo from '../assets/synthlabs.png';
 import medarcLogo from '../assets/medarc.png';
 import styles from './Header.module.css';  // Import the CSS module

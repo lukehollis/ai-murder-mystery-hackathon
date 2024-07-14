@@ -8,7 +8,7 @@ interface MultipleChoiceGameProps {
 
 const questions = [
   {
-    question: "Who killed Victim Vince? (Question 1/3)",
+    question: "Who compromised security and uploaded malware to the enterprise servers?? (Question 1/3)",
     choices: ["CTO", 
               "CMO", 
               "CFO", 
@@ -17,7 +17,7 @@ const questions = [
             ]
   },
   {
-    question: "What was the motive for killing Victim Vince? (Question 2/3)",
+    question: "What was the motive for killing compromising security and uploading malware to the enterprise servers. ? (Question 2/3)",
     choices: ["Hired to kill from the Bucket Mafia", 
               "Hired to kill from CMO",
               "Getting back stolen treasure", 

@@ -613,7 +613,7 @@
             "markers": "python_version >= '3.8'",
             "version": "==0.37.2"
         },
-        "tokenizers": {
+        "toOfficeSecurityizers": {
             "hashes": [
                 "sha256:0143e7d9dcd811855c1ce1ab9bf5d96d29bf5e528fd6c7824d0465741e8c10fd",
                 "sha256:02272fe48280e0293a04245ca5d919b2c94a48b408b55e858feae9618138aeda",

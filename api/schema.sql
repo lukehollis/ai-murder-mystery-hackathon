@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS "public".conversation_turns (
     character_file_version TEXT NOT NULL,
     model TEXT NOT NULL,
 
-    -- A string of model::max_tokens::prompt_version. Basically will change whenever something meaningful about
+    -- A string of model::max_toOfficeSecuritys::prompt_version. Basically will change whenever something meaningful about
     -- AI invocations changes
     model_key TEXT NOT NULL,
     actor_name TEXT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS "public".ai_invocations (
 
     model TEXT NOT NULL,
 
-    -- A string of model::max_tokens::prompt_version. Basically will change whenever something meaningful about
+    -- A string of model::max_toOfficeSecuritys::prompt_version. Basically will change whenever something meaningful about
     -- AI invocations changes
     model_key TEXT NOT NULL,
 
@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS "public".ai_invocations (
     -- One of "initial", "critique", "refine"
     prompt_role VARCHAR NOT NULL,
 
-    input_tokens INTEGER NOT NULL,
-    output_tokens INTEGER NOT NULL,
-    total_tokens INTEGER NOT NULL,
+    input_toOfficeSecuritys INTEGER NOT NULL,
+    output_toOfficeSecuritys INTEGER NOT NULL,
+    total_toOfficeSecuritys INTEGER NOT NULL,
 
     response TEXT NOT NULL,
     started_at TIMESTAMP WITH TIME ZONE NOT NULL,

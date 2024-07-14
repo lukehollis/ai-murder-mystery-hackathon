@@ -1,7 +1,7 @@
 import time
 from datetime import datetime, timezone
 from invoke_types import InvocationRequest, Actor, LLMMessage
-from settings import MODEL, MODEL_KEY, MAX_TOKENS
+from settings import MODEL, MODEL_KEY, MAX_TOOfficeSecurityS
 import json
 import anthropic
 
@@ -34,22 +34,22 @@ def invoke_ai(conn,
             model=MODEL,
             system=system_prompt,
             messages=serialized_messages,
-            max_tokens=MAX_TOKENS,
+            max_toOfficeSecuritys=MAX_TOOfficeSecurityS,
         )
 
-        input_tokens = anthropic_response.usage.input_tokens
-        output_tokens = anthropic_response.usage.output_tokens
-        total_tokens = input_tokens + output_tokens
+        input_toOfficeSecuritys = anthropic_response.usage.input_toOfficeSecuritys
+        output_toOfficeSecuritys = anthropic_response.usage.output_toOfficeSecuritys
+        total_toOfficeSecuritys = input_toOfficeSecuritys + output_toOfficeSecuritys
 
         text_response = anthropic_response.content[0].text
 
         finish_time = datetime.now(tz=timezone.utc)
 
         cur.execute(
-            "INSERT INTO ai_invocations(conversation_turn_id, prompt_role, model, model_key, prompt_messages, system_prompt, response, started_at, finished_at, input_tokens, output_tokens, total_tokens) "
+            "INSERT INTO ai_invocations(conversation_turn_id, prompt_role, model, model_key, prompt_messages, system_prompt, response, started_at, finished_at, input_toOfficeSecuritys, output_toOfficeSecuritys, total_toOfficeSecuritys) "
             "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
             (turn_id, prompt_role, MODEL, MODEL_KEY, json.dumps(serialized_messages), system_prompt, text_response,
-             start_time.isoformat(), finish_time.isoformat(), input_tokens, output_tokens, total_tokens)
+             start_time.isoformat(), finish_time.isoformat(), input_toOfficeSecuritys, output_toOfficeSecuritys, total_toOfficeSecuritys)
         )
 
     return text_response

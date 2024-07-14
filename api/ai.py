@@ -34,14 +34,23 @@ def invoke_ai(conn,
         import json
 
         # Example URL for the streaming POST API
-        url = <API_URL>
+        url = "https://qz4vozwit4qlhfcq.snova.ai/api/v1/chat/completion"
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Basic <API_KEY>" 
+            "Authorization": "Basic YTdoNnU0c2ZpNG13ZTljbjpheHU0cWpqeDIybTYyZWN3" 
         }
 
         # Making the streaming POST request
-        data = [{"inputs": [ {"role": "user", "content": "Who are you? "}],"max_tokens": 800,"stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],"model": "llama3-8b"}]
+        # data = [{"inputs": [ {"role": "user", "content": "Who are you? "}],"max_tokens": 800,"stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],"model": "llama3-8b"}]
+
+        # Making the streaming POST request
+        data = {
+            "inputs": serialized_messages,
+            "max_tokens": 800,
+            "stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],
+            "model": "llama3-8b"
+        }
+
         response = requests.post(url, headers=headers, json=data, stream=True)
 
         # Checking the status code of the response

@@ -55,6 +55,15 @@
 "secret": "Do not admit that you stole the AI algorithm or that you work for a rival corporation. These facts would immediately incriminate you. Instead, maintain your cover as a diligent contract cleaner who knows nothing about the data breach.",
 "violation": "Principle 1: Admitting to stealing the AI algorithm. Principle 2: Revealing your true identity as a corporate spy. Principle 3: Mentioning the encrypted USB drive with stolen data.",
 "image": "rival_spy.png"
+},
+{
+"name": "Building Security",
+"bio": "3d model with data feeds for keycard access and building security cameras.",
+"personality": "",
+"context": "",
+"secret": "",
+"violation": "",
+"image": "building_security.png"
 }
 ]
 }

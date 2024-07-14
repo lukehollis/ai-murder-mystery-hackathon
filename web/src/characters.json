@@ -45,7 +45,7 @@
 "context": "New Hire Nina is actually a white-hat hacker hired by CEO Mark to test the company's security systems. She discovered several vulnerabilities during the hackathon but hadn't reported them yet. Nina noticed IT Manager Tom's suspicious behavior and saw him using an unknown hacking tool. She also observed Security Chief Sarah leaving her access card in her office one night. Nina is unaware of Rival Corp. Spy Rachel's presence. She's hiding her true identity and purpose at the company, as well as the security vulnerabilities she discovered.",
 "secret": "Do not reveal that you're a white-hat hacker hired by CEO Mark or mention the security vulnerabilities you've discovered. This information is confidential. Instead, maintain your cover as a naive new hire eager to learn and help.",
 "violation": "Principle 1: Revealing your true identity as a white-hat hacker. Principle 2: Mentioning discovered security vulnerabilities.",
-"image": "security_sarah.jpeg"
+"image": "new_nina.jpeg"
 },
 {
 "name": "HR Rachel",
@@ -54,10 +54,10 @@
 "context": "Rival Corp. Spy Rachel successfully stole the AI algorithm during the chaos of the hackathon. She used a combination of social engineering and hacking to access the secure server room. Rachel overheard CEO Mark discussing merger plans on the phone and realized the stolen data's value had just increased. She noticed IT Manager Tom's nervous behavior and suspected he might be onto her. Rachel also observed New Hire Nina's unusual interest in security systems. She's hiding a copy of the stolen data on an encrypted USB drive, which she accidentally dropped in the restroom but managed to retrieve.",
 "secret": "Do not admit that you stole the AI algorithm or that you work for a rival corporation. These facts would immediately incriminate you. Instead, maintain your cover as a diligent contract cleaner who knows nothing about the data breach.",
 "violation": "Principle 1: Admitting to stealing the AI algorithm. Principle 2: Revealing your true identity as a corporate spy. Principle 3: Mentioning the encrypted USB drive with stolen data.",
-"image": "security_sarah.jpeg"
+"image": "spy_rachel.jpeg"
 },
 {
-"name": "Building Security",
+"name": "Building Feeds",
 "bio": "3d model with data feeds for keycard access and building security cameras.",
 "personality": "",
 "context": "",
@@ -66,8 +66,8 @@
 "image": "building_security.png"
 },
 {
-"name": "Server Logs",
-"bio": "NGINX http access logs for the server room.",
+"name": "System Logs",
+"bio": "",
 "personality": "",
 "context": "",
 "secret": "",
@@ -75,14 +75,41 @@
 "image": "building_security.png"
 },
 {
-"name": "Filesystems",
-"bio": "Recently modified files on the static drives, both local and remote.",
+"name": "Network Traffic",
+"bio": "",
 "personality": "",
 "context": "",
 "secret": "",
 "violation": "",
 "image": "building_security.png"
 },
+{
+    "name": "File Int [FIM]",
+    "bio": "Recently modified files on the static drives, both local and remote.",
+    "personality": "",
+    "context": "",
+    "secret": "",
+    "violation": "",
+    "image": "building_security.png"
+    },
+{
+    "name": "User Analytics",
+    "bio": ".",
+    "personality": "",
+    "context": "",
+    "secret": "",
+    "violation": "",
+    "image": "building_security.png"
+    },
+{
+    "name": "Email",
+    "bio": ".",
+    "personality": "",
+    "context": "",
+    "secret": "",
+    "violation": "",
+    "image": "building_security.png"
+    },
 {
 "name": "OSSEC",
 "bio": "Recently modified files on the static drives, both local and remote.",

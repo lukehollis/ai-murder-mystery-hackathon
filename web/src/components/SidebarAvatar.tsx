@@ -28,6 +28,7 @@ export default function SidebarAvatar({
       style={{
         cursor: postGame ? "not-allowed" : "pointer",
         backgroundColor: active ? "lightblue" : "transparent",
+        padding: "6px"
       }}
     >
       <ActorImage actor={actor} />

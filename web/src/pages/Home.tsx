@@ -181,7 +181,7 @@ export default function Home() {
         ) : (
           <div>
             <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: '10px', height: '100%' }}>
-              <div style={{ overflowY: 'auto', height: '400px' }}>
+              <div style={{ overflowY: 'auto', height: '660px' }}>
                 <ActorChat actor={actors[currActor]} />
               </div>
               <div style={{ overflow: 'auto'}}>

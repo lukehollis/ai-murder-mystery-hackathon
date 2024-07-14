@@ -87,6 +87,7 @@ const ActorChat = ({ actor }: Props) => {
         border: "1px solid black",
         padding: 10,
         overflow: "scroll",
+        height: "660px",
       }}
     >
       <ActorImage actor={actor} />
@@ -97,6 +98,11 @@ const ActorChat = ({ actor }: Props) => {
       >
         {actor.name}
       </Text>
+      
+      {actor.name === "Building Feeds" && (
+        <iframe src="https://my.matterport.com/show?m=PnsWk2UF8pv" style={{ width: "100%", height: "400px", border: "none" }} />
+      )}
+
       <div>{actor.bio}</div>
       {actor.messages.map((m, i) => (
         <div

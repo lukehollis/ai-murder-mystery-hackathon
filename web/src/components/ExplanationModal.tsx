@@ -19,7 +19,7 @@ const ExplanationModal: React.FC<ExplanationModalProps> = ({ opened, onClose }) 
       title={<Text size="lg" fw={700}>About the game</Text>}
     >
       <Text mt="md">
-        Created by Large People Model team. \o/ 
+        Created in about 3 hours by Large People Model team. \o/ 
         <br></br>
         Based on <Anchor href="https://paulscotti.github.io/" target="_blank">Paul Scotti</Anchor> & <Anchor href="https://www.willbeddow.com/" target="_blank">Will Beddow</Anchor>'s work during a <Anchor href="https://www.synthlabs.ai/" target="_blank">synthlabs.ai</Anchor> hackathon. 
       </Text>

@@ -30,17 +30,27 @@ def invoke_ai(conn,
         start_time = datetime.now(tz=timezone.utc)
         serialized_messages = [msg.model_dump() for msg in messages]
 
-        sambanova_response = sambanova.SambaNova().messages.create(
-            model=MODEL,
-            system=system_prompt,
-            messages=serialized_messages,
-            max_tokens=MAX_TOKENS,
-        )
+        import requests
+        import json
 
-        input_tokens = sambanova_response.usage.input_tokens
-        output_tokens = sambanova_response.usage.output_tokens
-        total_tokens = input_tokens + output_tokens
+        # Example URL for the streaming POST API
+        url = <API_URL>
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Basic <API_KEY>" 
+        }
 
+        # Making the streaming POST request
+        data = [{"inputs": [ {"role": "user", "content": "Who are you? "}],"max_tokens": 800,"stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],"model": "llama3-8b"}]
+        response = requests.post(url, headers=headers, json=data, stream=True)
+
+        # Checking the status code of the response
+        if response.status_code == 200:
+            print("Request was successful")
+            # Reading and printing the response stream
+            for chunk in response.iter_content(chunk_size=1024):
+                if chunk:
+                    print(chunk.decode('utf-8'))
         text_response = sambanova_response.content[0].text
 
         finish_time = datetime.now(tz=timezone.utc)

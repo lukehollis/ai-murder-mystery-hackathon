@@ -19,11 +19,9 @@ const ExplanationModal: React.FC<ExplanationModalProps> = ({ opened, onClose }) 
       title={<Text size="lg" fw={700}>About the game</Text>}
     >
       <Text mt="md">
-        Created by <Anchor href="https://paulscotti.github.io/" target="_blank">Paul Scotti</Anchor> & <Anchor href="https://www.willbeddow.com/" target="_blank">Will Beddow</Anchor> during a <Anchor href="https://www.synthlabs.ai/" target="_blank">synthlabs.ai</Anchor> hackathon. 
+        Created by Large People Model team. \o/ 
         <br></br>
-        Submitted as part of <Anchor href="https://docs.anthropic.com/en/build-with-claude-contest/overview" target="_blank">Anthropic's June Developer Contest</Anchor>.
-        <br></br>
-        Story is modified from the South Korean show <Anchor href="https://en.wikipedia.org/wiki/Crime_Scene_(South_Korean_TV_series)" target="_blank">Crime Scene</Anchor>, S02E11 Mountain Villa Murder.
+        Based on <Anchor href="https://paulscotti.github.io/" target="_blank">Paul Scotti</Anchor> & <Anchor href="https://www.willbeddow.com/" target="_blank">Will Beddow</Anchor>'s work during a <Anchor href="https://www.synthlabs.ai/" target="_blank">synthlabs.ai</Anchor> hackathon. 
       </Text>
       <br></br>
       <Text size="lg" fw={700}>Pink elephants refinement system</Text>

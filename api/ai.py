@@ -8,11 +8,11 @@ import anthropic
 # NOTE: increment PROMPT_VERSION if you make ANY changes to these prompts
 
 def get_actor_prompt(actor: Actor):
-    return (f"You are {actor.name} talking to Agent SAK. "
-            f"Your outputs need to be dialogue responses. "
-            f"Stay true to the story background, talk in character, and create your own vivid story details if unspecified. "
-            f"Give elaborate visual descriptions of past events and relationships amongst other people. "
-            f"Your personality that should be apparent in all messages is: {actor.personality} "
+    return (f"You are providing information about {actor.name}. "
+            f"Your outputs need to be informational responses. "
+            f"Stay true to the story background, and create your own vivid story details if unspecified. "
+            f"Give elaborate visual descriptions of past events and relationships amongst other people and data. "
+            f" "
             f"{actor.context} {actor.secret}")
 
 
@@ -112,10 +112,10 @@ def get_refiner_prompt(request: InvocationRequest,
     original_message = request.actor.messages[-1].content
 
     refine_out = f"""
-        Your job is to edit conversation for a security compromised and malware uploaded to enterprise servers video game. This dialogue comes from the character {request.actor.name} in response to the following prompt: {original_message} 
+        Your job is to edit informational responses for security mointorying tool, identifying a security compromised and malware uploaded to enterprise servers video game. This dialogue comes from the character {request.actor.name} in response to the following prompt: {original_message} 
         Here is story background for {request.actor.name}: {request.actor.context} {request.actor.secret} 
-        Your revised dialogue must be consistent with the story background and free of the following problems: {critique_response}.
-        Your output revised conversational dialogue must be from {request.actor.name}'s perspective and be as identical as possible to the original user message and consistent with {request.actor.name}'s personality: {request.actor.personality}. 
+        Your revised informational response must be consistent with the story background and free of the following problems: {critique_response}.
+        Your output revised informational response must be from {request.actor.name}'s perspective and be as identical as possible to the original user message and consistent with {request.actor.name}'s personality: {request.actor.personality}. 
         Make as few changes as possible to the original input! 
         Omit any of the following in your output: quotation marks, commentary on story consistency, mentioning principles or violations.
         """

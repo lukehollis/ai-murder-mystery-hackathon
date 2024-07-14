@@ -26,6 +26,8 @@ def invoke_ai(conn,
               system_prompt: str,
               messages: list[LLMMessage],):
 
+    MAX_TOKENS = 1000
+
     with conn.cursor() as cur:
         start_time = datetime.now(tz=timezone.utc)
         serialized_messages = [msg.model_dump() for msg in messages]
@@ -34,25 +36,26 @@ def invoke_ai(conn,
             model=MODEL,
             system=system_prompt,
             messages=serialized_messages,
-            max_toOfficeSecuritys=MAX_TOOfficeSecurityS,
+            max_tokens=MAX_TOKENS,
         )
 
-        input_toOfficeSecuritys = anthropic_response.usage.input_toOfficeSecuritys
-        output_toOfficeSecuritys = anthropic_response.usage.output_toOfficeSecuritys
-        total_toOfficeSecuritys = input_toOfficeSecuritys + output_toOfficeSecuritys
+        input_tokens = anthropic_response.usage.input_tokens
+        output_tokens = anthropic_response.usage.output_tokens
+        total_tokens = input_tokens + output_tokens
 
         text_response = anthropic_response.content[0].text
 
         finish_time = datetime.now(tz=timezone.utc)
 
         cur.execute(
-            "INSERT INTO ai_invocations(conversation_turn_id, prompt_role, model, model_key, prompt_messages, system_prompt, response, started_at, finished_at, input_toOfficeSecuritys, output_toOfficeSecuritys, total_toOfficeSecuritys) "
+            "INSERT INTO ai_invocations(conversation_turn_id, prompt_role, model, model_key, prompt_messages, system_prompt, response, started_at, finished_at, input_tokens, output_tokens, total_tokens) "
             "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
             (turn_id, prompt_role, MODEL, MODEL_KEY, json.dumps(serialized_messages), system_prompt, text_response,
-             start_time.isoformat(), finish_time.isoformat(), input_toOfficeSecuritys, output_toOfficeSecuritys, total_toOfficeSecuritys)
+             start_time.isoformat(), finish_time.isoformat(), input_tokens, output_tokens, total_tokens)
         )
 
     return text_response
+
 
 
 def respond_initial(conn, turn_id: int,

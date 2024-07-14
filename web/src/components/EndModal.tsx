@@ -14,7 +14,7 @@ const IntroModal: React.FC<IntroModalProps> = ({ opened, onClose }) => {
       title="Thank you for playing Agent SAK!"
     >
       <Text>
-        Let's see if you were right... 🕵️ Detective Sheerluck's deduction is now in your chat interface.
+        Let's see if you were right... 🕵️ Agent SAK's deduction is now in your chat interface.
       </Text>
       <br></br>
       <Text>

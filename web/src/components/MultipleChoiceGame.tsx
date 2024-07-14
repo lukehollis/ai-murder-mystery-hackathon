@@ -12,7 +12,7 @@ const questions = [
     choices: ["CTO", 
               "CMO", 
               "CFO", 
-              "Amateur Larry",
+              "Corporate Lawyer",
               "Innocent Kim",
             ]
   },
@@ -30,7 +30,7 @@ const questions = [
     choices: ["CTO", 
             "CMO", 
             "CFO", 
-            "Amateur Larry",
+            "Corporate Lawyer",
             "Innocent Kim",
             ],
   }

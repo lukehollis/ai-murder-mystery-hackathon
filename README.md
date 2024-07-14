@@ -1,4 +1,4 @@
-# Agent SAK: Multi-Agent LLM Murder Mystery
+# Agent SAK: Security Authentication Keeper
 
 **[Play online](https://ai-murder-mystery.onrender.com)**
 <div align="center">

@@ -67,7 +67,7 @@ const ActorChat = ({ actor }: Props) => {
   const handleSendMessage = () => {
     const newMessage: LLMMessage = {
       role: "user",
-      content: "Detective Sheerluck: " + currMessage,
+      content: "Agent SAK: " + currMessage,
     };
 
     sendChat([...actor.messages, newMessage], setActors, globalStory, sessionId, actor, setLoading);

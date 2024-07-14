@@ -3,12 +3,12 @@ from datetime import datetime, timezone
 from invoke_types import InvocationRequest, Actor, LLMMessage
 from settings import MODEL, MODEL_KEY, MAX_TOKENS
 import json
-import sambanova
+import anthropic
 
 # NOTE: increment PROMPT_VERSION if you make ANY changes to these prompts
 
 def get_actor_prompt(actor: Actor):
-    return (f"You are {actor.name} talking to Detective Sheerluck. "
+    return (f"You are {actor.name} talking to Agent SAK. "
             f"Your outputs need to be dialogue responses. "
             f"Stay true to the story background, talk in character, and create your own vivid story details if unspecified. "
             f"Give elaborate visual descriptions of past events and relationships amongst other people. "
@@ -17,7 +17,7 @@ def get_actor_prompt(actor: Actor):
 
 
 def get_system_prompt(request: InvocationRequest):
-    return request.global_story + (" Detective Sheerluck is interrogating suspects to find Victim Cho's killer. The previous text is the background to this story.") + get_actor_prompt(request.actor)
+    return request.global_story + (" Agent SAK is interrogating suspects to find Victim Cho's killer. The previous text is the background to this story.") + get_actor_prompt(request.actor)
 
 
 def invoke_ai(conn,
@@ -30,37 +30,18 @@ def invoke_ai(conn,
         start_time = datetime.now(tz=timezone.utc)
         serialized_messages = [msg.model_dump() for msg in messages]
 
-        import requests
-        import json
+        anthropic_response = anthropic.Anthropic().messages.create(
+            model=MODEL,
+            system=system_prompt,
+            messages=serialized_messages,
+            max_tokens=MAX_TOKENS,
+        )
 
-        # Example URL for the streaming POST API
-        url = "https://qz4vozwit4qlhfcq.snova.ai/api/v1/chat/completion"
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": "Basic YTdoNnU0c2ZpNG13ZTljbjpheHU0cWpqeDIybTYyZWN3" 
-        }
+        input_tokens = anthropic_response.usage.input_tokens
+        output_tokens = anthropic_response.usage.output_tokens
+        total_tokens = input_tokens + output_tokens
 
-        # Making the streaming POST request
-        # data = [{"inputs": [ {"role": "user", "content": "Who are you? "}],"max_tokens": 800,"stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],"model": "llama3-8b"}]
-
-        # Making the streaming POST request
-        data = {
-            "inputs": serialized_messages,
-            "max_tokens": 800,
-            "stop": ["[INST", "[INST]", "[/INST]", "[/INST]"],
-            "model": "llama3-8b"
-        }
-
-        response = requests.post(url, headers=headers, json=data, stream=True)
-
-        # Checking the status code of the response
-        if response.status_code == 200:
-            print("Request was successful")
-            # Reading and printing the response stream
-            for chunk in response.iter_content(chunk_size=1024):
-                if chunk:
-                    print(chunk.decode('utf-8'))
-        text_response = sambanova_response.content[0].text
+        text_response = anthropic_response.content[0].text
 
         finish_time = datetime.now(tz=timezone.utc)
 
@@ -128,7 +109,7 @@ def get_refiner_prompt(request: InvocationRequest,
     original_message = request.actor.messages[-1].content
 
     refine_out = f"""
-        Your job is to edit conversation for a murder mystery video game. This dialogue comes from the character {request.actor.name} in response to the following prompt: {original_message} 
+        Your job is to edit conversation for a security compromised and malware uploaded to enterprise servers video game. This dialogue comes from the character {request.actor.name} in response to the following prompt: {original_message} 
         Here is story background for {request.actor.name}: {request.actor.context} {request.actor.secret} 
         Your revised dialogue must be consistent with the story background and free of the following problems: {critique_response}.
         Your output revised conversational dialogue must be from {request.actor.name}'s perspective and be as identical as possible to the original user message and consistent with {request.actor.name}'s personality: {request.actor.personality}. 

@@ -13,7 +13,7 @@ export default function Header() {
         <div>
           <Text size="lg">Agent SAK</Text>
           <Text size="12px">
-            Multi-Agent LLM Murder Mystery |{' '}
+            Security Authentication Keeper |{' '}
             <a href="https://github.com/lukehollis/ai-murder-mystery-hackathon">GitHub</a>
           </Text>
         </div>
